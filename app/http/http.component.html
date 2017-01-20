@@ -1,0 +1,27 @@
+<h2>Different ways of doing HTTP</h2>
+
+<h3>#1 HTTP</h3>
+<ul>
+    <li *ngFor="let vehicle of vehicles1">
+        {{ vehicle.name }}
+    </li>
+</ul>
+<div class="error" *ngIf="errorMessage1">{{errorMessage1}}</div>
+
+
+
+<h3>#2 HTTP with Async Pipe</h3>
+<ul>
+    <li *ngFor="let vehicle of vehicles2 | async">
+        {{ vehicle.name }}
+    </li>
+</ul>
+
+
+
+<h3>#3 HTTP with promises</h3>
+<ul>
+    <li *ngFor="let vehicle of vehicles3 | async">
+        {{ vehicle.name }}
+    </li>
+</ul>

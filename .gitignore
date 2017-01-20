@@ -1,0 +1,12 @@
+.idea
+node_modules
+jspm_packages
+npm-debug.*
+link-checker-results.txt
+_test-output
+_temp
+
+app/**/*.js
+app/**/*.js.map
+main.js
+main.js.map

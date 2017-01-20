@@ -1,0 +1,27 @@
+<h2>Basic</h2>
+<p>Example of a module with medium complexity. I would recommend this style for a "feature" section in an app</p>
+<ul>
+    <li *ngFor="let bullet of bullets">
+        {{bullet.text}}
+    </li>
+</ul>
+
+<h3>ngModel Examples</h3>
+<p>Instructions: edit these and watch the changes above</p>
+<ul>
+    <li *ngFor="let bullet of bullets">
+        <input type="text" [(ngModel)]="bullet.text">
+    </li>
+</ul>
+
+<h3>Pipes Examples</h3>
+<ul>
+    <li>Percent: {{pipeData.price | percent}}</li>
+    <li>Currency: {{pipeData.currency | currency:'USD'}}</li>
+    <li>Date: {{pipeData.date | date}}</li>
+    <li>Lowercase: {{pipeData.uppercase | lowercase}}</li>
+    <li>Custom Pipe: {{pipeData.custom | examplePipe:'Mr'}}</li>
+</ul>
+
+<h3>Component Example</h3>
+<example-component></example-component>

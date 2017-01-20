@@ -1,0 +1,22 @@
+- Components
+    - Core components best practices
+    - Header
+    - Footer
+- Organize / clarify
+    - Simple, medium, and complex views
+- Basic
+    - Add service
+- Views subfolders
+- Move routes into module
+- Lazy loading
+- HTTP vs Promises vs observables
+- More simple views
+- NgModel example
+- Pipes
+
+TODO@mattbillard
+- Readme
+- jQuery
+- Angular Bootstrap2
+- Pull misc lib in (e.g. highcharts, etc)
+
