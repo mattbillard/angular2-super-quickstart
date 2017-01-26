@@ -1,6 +1,8 @@
 <h2>Different ways of doing HTTP</h2>
 
-<h3>#1 HTTP</h3>
+
+
+<h3>#1 HTTP + observable</h3>
 <ul>
     <li *ngFor="let vehicle of vehicles1">
         {{ vehicle.name }}
@@ -10,7 +12,7 @@
 
 
 
-<h3>#2 HTTP with Async Pipe</h3>
+<h3>#2 HTTP + observable + async pipe</h3>
 <ul>
     <li *ngFor="let vehicle of vehicles2 | async">
         {{ vehicle.name }}
@@ -19,9 +21,44 @@
 
 
 
-<h3>#3 HTTP with promises</h3>
+<h3>#3 HTTP + promise</h3>
 <ul>
-    <li *ngFor="let vehicle of vehicles3 | async">
+    <li *ngFor="let vehicle of vehicles3">
         {{ vehicle.name }}
     </li>
 </ul>
+<div class="error" *ngIf="errorMessage3">{{errorMessage3}}</div>
+
+
+
+<h3>#4 HTTP + promise + async pipe</h3>
+<ul>
+    <li *ngFor="let vehicle of vehicles4 | async">
+        {{ vehicle.name }}
+    </li>
+</ul>
+
+
+
+<br>
+<br>
+<h2>Easy ways to mock using promises</h2>
+
+
+<h3>#5 Immediately resolved promise</h3>
+<ul>
+    <li *ngFor="let vehicle of vehicles5">
+        {{ vehicle.name }}
+    </li>
+</ul>
+<div class="error" *ngIf="errorMessage5">{{errorMessage5}}</div>
+
+
+
+<h3>#6 SetTimeout promise (to mimic slow connections)</h3>
+<ul>
+    <li *ngFor="let vehicle of vehicles6">
+        {{ vehicle.name }}
+    </li>
+</ul>
+<div class="error" *ngIf="errorMessage6">{{errorMessage6}}</div>
