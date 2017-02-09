@@ -16,6 +16,7 @@ A suped up version of the Angular2 Quickstart. It has examples of many of the ba
 
 ##Install
 ```
+npm install typescript -g
 npm install
 ```
 
