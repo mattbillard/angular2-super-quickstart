@@ -10,13 +10,13 @@ import { HttpComponent } from './http.component';
 import { VehicleService } from './services/vehicle.service';
 
 const routes:Routes = <Routes>[
-    { path: 'http', component: HttpComponent }
+  {path: 'http', component: HttpComponent}
 ];
 
 @NgModule({
-    imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
-    exports: [RouterModule],
-    declarations: [HttpComponent],
-    providers: [VehicleService],
+  imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
+  exports: [RouterModule],
+  declarations: [HttpComponent],
+  providers: [VehicleService],
 })
-export class HttpExamplesModule { }
+export class HttpExamplesModule {}

@@ -11,19 +11,19 @@ import { CanActivateAuthGuard } from './services/can-activate.service';
 import { UserProfileService } from './services/user-profile.service';
 
 const routes:Routes = <Routes>[
-    { path: 'login', component: LoginComponent }
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
-    imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
-    exports: [RouterModule],
-    declarations: [
-        LoginComponent,
-    ],
-    providers: [
-        CanActivateAuthGuard,
-        UserProfileService,
-    ],
+  imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
+  exports: [RouterModule],
+  declarations: [
+    LoginComponent,
+  ],
+  providers: [
+    CanActivateAuthGuard,
+    UserProfileService,
+  ],
 })
 
-export class LoginModule { }
+export class LoginModule {}

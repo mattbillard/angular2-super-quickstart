@@ -12,27 +12,27 @@ import { ListComponent } from './views/list/list.component';
 import { CharacterService } from './services/character.service';
 
 const routes:Routes = <Routes>[
-    //{ path: 'nested', component: NestedComponent }     //BTW, this is what a normal route looks like
-    {
-        path: 'nested',
-        component: NestedComponent,
-        children: [
-            { path: '', component: ListComponent },
-            { path: ':id', component: DetailComponent },
-        ]
-    }
+  //{ path: 'nested', component: NestedComponent }     //BTW, this is what a normal route looks like
+  {
+    path: 'nested',
+    component: NestedComponent,
+    children: [
+      {path: '', component: ListComponent},
+      {path: ':id', component: DetailComponent},
+    ]
+  }
 ];
 
 @NgModule({
-    imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
-    exports: [RouterModule],
-    declarations: [
-        NestedComponent,
-        DetailComponent,
-        ListComponent,
-    ],
-    providers: [
-        CharacterService,
-    ],
+  imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
+  exports: [RouterModule],
+  declarations: [
+    NestedComponent,
+    DetailComponent,
+    ListComponent,
+  ],
+  providers: [
+    CharacterService,
+  ],
 })
-export class NestedModule { }
+export class NestedModule {}

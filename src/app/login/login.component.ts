@@ -6,46 +6,45 @@ import { LoginService } from './services/login.service';
 import { UserProfileService } from './services/user-profile.service';
 
 @Component({
-    moduleId: module.id,
-    templateUrl: 'login.component.html',
-    providers: [LoginService]
+  moduleId: module.id,
+  templateUrl: 'login.component.html',
+  providers: [LoginService]
 })
 export class LoginComponent implements OnDestroy {
-    private loginSub: Subscription;
+  private loginSub:Subscription;
 
-    constructor(
-        private loginService: LoginService,
-        private route: ActivatedRoute,
-        private router: Router,
-        private userProfileService: UserProfileService) {
-    }
+  constructor(private loginService:LoginService,
+              private route:ActivatedRoute,
+              private router:Router,
+              private userProfileService:UserProfileService) {
+  }
 
-    public get isLoggedIn() : boolean {
-        return this.userProfileService.isLoggedIn;
-    }
+  public get isLoggedIn():boolean {
+    return this.userProfileService.isLoggedIn;
+  }
 
-    login() {
-        this.loginSub = this.loginService
-            .login()
-            .mergeMap(loginResult => this.route.queryParams)
-            .map(qp => qp['redirectTo'])
-            .subscribe(redirectTo => {
-                console.log(`Successfully logged in`);
-                if (this.userProfileService.isLoggedIn) {
-                    let url = redirectTo ? [redirectTo] : [ '/' ];
-                    this.router.navigate(url);
-                }
-            });
-    }
-
-    logout() {
-        this.loginService.logout();
-        console.log(`Successfully logged out`);
-    }
-
-    ngOnDestroy() {
-        if (this.loginSub) {
-            this.loginSub.unsubscribe();
+  login() {
+    this.loginSub = this.loginService
+      .login()
+      .mergeMap(loginResult => this.route.queryParams)
+      .map(qp => qp['redirectTo'])
+      .subscribe(redirectTo => {
+        console.log(`Successfully logged in`);
+        if (this.userProfileService.isLoggedIn) {
+          let url = redirectTo ? [redirectTo] : ['/'];
+          this.router.navigate(url);
         }
+      });
+  }
+
+  logout() {
+    this.loginService.logout();
+    console.log(`Successfully logged out`);
+  }
+
+  ngOnDestroy() {
+    if (this.loginSub) {
+      this.loginSub.unsubscribe();
     }
+  }
 }

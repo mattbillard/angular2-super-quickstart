@@ -1,13 +1,12 @@
-
 /* NOTE: this syntax allows a child component to access its parent's styles */
 :host /deep/ .block {
-    margin: 5px;
-    border: solid 1px #aaa;
-    padding: 10px;
-    display: block;
+  margin: 5px;
+  border: solid 1px #aaa;
+  padding: 10px;
+  display: block;
 }
 
 li {
-    color: #66d;
+  color: #66d;
 }
 

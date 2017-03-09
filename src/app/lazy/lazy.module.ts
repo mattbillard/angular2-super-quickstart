@@ -7,15 +7,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { LazyComponent } from './lazy.component';
 
 const routes:Routes = <Routes>[
-    //{ path: 'lazy', component: LazyComponent }
-    { path: '', component: LazyComponent }  //NOTE: path is empty. For lazy modules, it is specified in the parent module.
+  //{ path: 'lazy', component: LazyComponent }
+  {path: '', component: LazyComponent}  //NOTE: path is empty. For lazy modules, it is specified in the parent module.
 ];
 
 @NgModule({
-    imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
-    exports: [RouterModule],
-    declarations: [LazyComponent],
-    providers: [],
+  imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
+  exports: [RouterModule],
+  declarations: [LazyComponent],
+  providers: [],
 })
 
-export class LazyModule { }
+export class LazyModule {}

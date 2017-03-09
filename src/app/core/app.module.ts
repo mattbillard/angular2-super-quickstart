@@ -23,37 +23,37 @@ import { FooComponent } from './views/foo/foo.component';
 import { BarComponent } from './views/bar/bar.component';
 import { BazComponent } from './views/baz/baz.component';
 
-const routes: Routes = [
-    { path: '', pathMatch: 'full', redirectTo: '/foo' },                    //Default route
-    { path: 'foo', component: FooComponent },
-    { path: 'bar', component: BarComponent },
-    { path: 'baz', component: BazComponent },
-    { path: 'lazy', loadChildren: 'app/lazy/lazy.module#LazyModule' },      //Lazy loaded module. NOTE: LazyModule routes are here on parent.
+const routes:Routes = [
+  {path: '', pathMatch: 'full', redirectTo: '/foo'},                    //Default route
+  {path: 'foo', component: FooComponent},
+  {path: 'bar', component: BarComponent},
+  {path: 'baz', component: BazComponent},
+  {path: 'lazy', loadChildren: 'app/lazy/lazy.module#LazyModule'},      //Lazy loaded module. NOTE: LazyModule routes are here on parent.
 ];
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        FormsModule,
-        HttpModule,
-        RouterModule.forRoot(routes),
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    RouterModule.forRoot(routes),
 
-        BasicModule,
-        HttpExamplesModule,
-        LoginModule,
-        NestedModule,
-        SecureModule,
-    ],
-    exports: [],
-    declarations: [
-        AppComponent,
-        FooterComponent,
-        HeaderComponent,
-        FooComponent,
-        BarComponent,
-        BazComponent,
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
+    BasicModule,
+    HttpExamplesModule,
+    LoginModule,
+    NestedModule,
+    SecureModule,
+  ],
+  exports: [],
+  declarations: [
+    AppComponent,
+    FooterComponent,
+    HeaderComponent,
+    FooComponent,
+    BarComponent,
+    BazComponent,
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

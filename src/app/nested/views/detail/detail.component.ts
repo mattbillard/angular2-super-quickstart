@@ -4,45 +4,45 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Character, CharacterService } from '../../services/character.service';
 
 @Component({
-    moduleId: module.id,
-    selector: 'detail',
-    templateUrl: 'detail.component.html',
+  moduleId: module.id,
+  selector: 'detail',
+  templateUrl: 'detail.component.html',
 })
 export class DetailComponent implements OnInit {
-    @Input() character:Character;
+  @Input() character:Character;
 
-    private id:any;
+  private id:any;
 
-    constructor(private characterService:CharacterService,
-                private route:ActivatedRoute,
-                private router:Router) {
+  constructor(private characterService:CharacterService,
+              private route:ActivatedRoute,
+              private router:Router) {
+  }
+
+  ngOnInit() {
+    if (!this.character) {
+      this.route
+        .params
+        .map(params => params['id'])
+        .do(id => this.id = +id)
+        .subscribe(id => this.getCharacter());
     }
+  }
 
-    ngOnInit() {
-        if (!this.character) {
-            this.route
-                .params
-                .map(params => params['id'])
-                .do(id => this.id = +id)
-                .subscribe(id => this.getCharacter());
-        }
-    }
+  private getCharacter() {
+    this.characterService.getCharacter(this.id)
+      .subscribe(character => this.setEditCharacter(character));
+  }
 
-    private getCharacter() {
-        this.characterService.getCharacter(this.id)
-            .subscribe(character => this.setEditCharacter(character));
-    }
+  private gotoCharacters() {
+    let route = ['/characters'];
+    this.router.navigate(route);
+  }
 
-    private gotoCharacters() {
-        let route = ['/characters'];
-        this.router.navigate(route);
+  private setEditCharacter(character:Character) {
+    if (character) {
+      this.character = character;
+    } else {
+      this.gotoCharacters();
     }
-
-    private setEditCharacter(character:Character) {
-        if (character) {
-            this.character = character;
-        } else {
-            this.gotoCharacters();
-        }
-    }
+  }
 }

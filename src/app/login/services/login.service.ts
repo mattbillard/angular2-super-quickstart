@@ -5,19 +5,20 @@ import { UserProfileService } from './user-profile.service';
 
 @Injectable()
 export class LoginService {
-    constructor(private userProfileService: UserProfileService) { }
+  constructor(private userProfileService:UserProfileService) {
+  }
 
-    login() {
-        return Observable.of(true)
-            .delay(1000)
-            .do(this.toggleLogState.bind(this));
-    }
+  login() {
+    return Observable.of(true)
+      .delay(1000)
+      .do(this.toggleLogState.bind(this));
+  }
 
-    logout() {
-        this.toggleLogState(false);
-    }
+  logout() {
+    this.toggleLogState(false);
+  }
 
-    private toggleLogState(val: boolean) {
-        this.userProfileService.isLoggedIn = val;
-    }
+  private toggleLogState(val:boolean) {
+    this.userProfileService.isLoggedIn = val;
+  }
 }

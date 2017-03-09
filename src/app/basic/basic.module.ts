@@ -14,20 +14,21 @@ import { ExampleService } from './services/example.service';
 import { ExamplePipe } from './pipes/example.pipe';
 
 const routes:Routes = <Routes>[
-    { path: 'basic', component: BasicComponent }
+  {path: 'basic', component: BasicComponent}
 ];
 
 @NgModule({
-    imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
-    exports: [RouterModule],
-    declarations: [
-        BasicComponent,
-        ExampleComponent,
-        ExamplePipe,
-    ],
-    providers: [
-        ExampleService,
-    ],
+  imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
+  exports: [RouterModule],
+  declarations: [
+    BasicComponent,
+    ExampleComponent,
+    ExamplePipe,
+  ],
+  providers: [
+    ExampleService,
+  ],
 })
 
-export class BasicModule { }
+export class BasicModule {
+}

@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-    moduleId: module.id,
-    selector: 'lazy',
-    templateUrl: 'lazy.component.html'
+  moduleId: module.id,
+  selector: 'lazy',
+  templateUrl: 'lazy.component.html'
 })
-export class LazyComponent { }
+export class LazyComponent {}
